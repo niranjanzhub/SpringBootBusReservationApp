@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Ticket</title>
+  <style>
+	*{
+		margin: 0px;
+		padding: 0px;
+		box-sizing: border-box;
+	}
+	body{
+		display: flex;
+		justify-content: center;
+		
+	}
+    .location span {
+      margin-left: 20px;
+    }
+    .card {
+      background: linear-gradient(to bottom, #ee3b2b 0%, #ea3525 10%, #ecedef 15%, #ecedef 96%, #ee1704 100%);
+      border: solid;
+      width: 90%;
+      height: 500px;
+      border-radius: 10px;
+      padding: 16px;
+      color: #525252;
+      font-family: sans-serif;
+      text-transform: uppercase;
+      
+    }
+
+    h1 {
+      font-size: 24px;
+      
+      color: #000;
+    }
+
+    h1 span {
+      font-weight: normal;
+    }
+
+    .details {
+      margin-top: 32px;
+    }
+
+    .details div {
+      margin: 11.2px 0;
+    }
+
+    .details h2 {
+      font-size: 14.4px;
+      margin: 0;
+    }
+
+    .details span {
+      font-size: 11.2px;
+      color: #a2aeae;
+    }
+
+    .time, .seat {
+      display: inline-block;
+    }
+
+    .time {
+      margin-left: 30px;
+    }
+
+    .location {
+      
+    }
+
+    .s h2 {
+      margin-left: 15px;
+    }
+
+    .email{
+      text-decoration: none;
+	  color: #000;
+      
+    }
+	.to{margin-left: 30px;}
+  </style>
+</head>
+<body>
+  <div class="card">
+    <h1 th:text="${ticketResponse.busName}"></h1>
+    <div class="details">
+      <div class="title">
+        <h2 th:text="${ticketResponse.name}"></h2>
+        <span>passenger name</span>
+      </div>
+      <div class="location"> 
+          <h2 th:text="${ticketResponse.name}"></h2>
+          <span>To</span>
+		  <h2   th:text="${ticketResponse.destination}"></h2>   
+      </div>
+	  <div class="seat">
+	          <h2 th:text="${ticketResponse.numberOfSeatsBooked}"></h2>
+	          <span>Seats</span>
+	        </div>
+			<div class="date">
+			          <h2 th:text="${ticketResponse.dateOfDeparture}"></h2>
+			          <span>travel date</span>
+			        </div>
+      <div class="email">
+        <h2 th:text="${ticketResponse.email}"></h2>
+        <span>email ID</span>
+      </div>
+      <div class="phone">
+        <h2 th:text="${ticketResponse.phone}"></h2>
+        <span>phone number</span>
+      </div>
+      <div class="ticketID">
+        <h2 th:text="${ticketResponse.ticketId}"></h2>
+        <span>ticket ID</span>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
